@@ -33,7 +33,8 @@ def process(request, resource):
             pagina.save()
             response = "<h1>Se ha creado la página " + nombre + "</h1>"
         else:
-            response = "<h1>Necesitas <a href='/admin/login/'> hacer login</a></h1>"
+            response = ("<h1>Necesitas <a href='/admin/login/'>" +
+                        "hacer login</a></h1>")
     else:
         return HttpResponse("Method not allowed", status=405)
     if request.user.is_authenticated():
